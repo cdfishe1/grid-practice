@@ -218,13 +218,28 @@
 
     grid-auto-rows: 80px; //sets the height of the implicit grid rows to 80px
     grid-auto-columns: .5fr; //sets the width of the implicit grid column to .5fr
-
-    grid-auto-flow: column; //Stipulates how the implicit grid is laid out. Defaults to rows.
+    grid-auto-flow: row; //Stipulates how the implicit grid is laid out. Defaults to rows.
+ 
+    align-items: center; //aligns items vertically in the grid area. Default is stretch.
+    justify-items: center; //aligns items horizontall in the grid area.
+  
 
     .cell {
-        padding: 20px;
+        padding: 10px;
         color: white;
         font-size: 30px;
         background-color: orangered;
+
+        &--4 {
+            background-color: crimson;
+            grid-row: 2 / span 3;
+            align-self: end; //overrides the stated align-items
+            justify-self: start; //overrides the stated justify-items
+        }
+
+        &--7 {
+            background-color: palevioletred;
+            grid-column: 1 / -1;
+        }
     }
 }
