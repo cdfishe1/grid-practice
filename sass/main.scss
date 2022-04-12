@@ -204,3 +204,27 @@
         grid-area: footer; 
     }
 }
+
+//Explicit and implicit grids
+.content {
+    background-color: #eee;
+    width: 1000px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-rows: repeat(2, 150px);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    grid-auto-rows: 80px; //sets the height of the implicit grid rows to 80px
+    grid-auto-columns: .5fr; //sets the width of the implicit grid column to .5fr
+
+    grid-auto-flow: column; //Stipulates how the implicit grid is laid out. Defaults to rows.
+
+    .cell {
+        padding: 20px;
+        color: white;
+        font-size: 30px;
+        background-color: orangered;
+    }
+}
