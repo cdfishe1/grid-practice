@@ -6,12 +6,13 @@
 
 .container {
     background-color: #eee;
-    width: 62.5rem;
-    margin: 1.875rem auto;
+    width: 1000px;
+    margin: 30px auto;
 
     display: grid;
-    grid-template-rows: 150px 150px;
-    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: repeat(2, 150px);
+    grid-template-columns: repeat(2, 150px) 1fr;
+    gap: 30px;
 }
 
 .item {
@@ -28,7 +29,7 @@
     }
 
     &--3 {
-        background-color: violet;
+        background-color: blueviolet;
     }
 
     &--4 {
