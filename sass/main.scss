@@ -261,53 +261,74 @@
 //Mincontent, maxcontent, minmax function
 .stuff {
     background-color: #eee;
-    width: 1000px;
+    //width: 1000px;
+     width: 80%;
     height: 1000px;
     margin: 30px auto;
 
     display: grid;
-    gap: 30px;
+    // grid-template-rows: repeat(2, 200px);
+    //max-content sets the width as wide as it needs to be to accomodate the content without a linebreak
+    //min-content sets the width as wide as it needs to accomodate the content without regard to linkebreak
+    // grid-template-columns: max-content 1fr 1fr min-content; 
+    //grid-template-rows: repeat(2, min-content);
 
-    //Align grid items to grid areas
-    grid-auto-rows: 80px; //sets the height of the implicit grid rows to 80px
-    grid-auto-columns: .5fr; //sets the width of the implicit grid column to .5fr
-    grid-auto-flow: row dense; //Stipulates how the implicit grid is laid out. Defaults to rows. The dense keyword tells grid to fill up any gaps with items.
- 
-    // align-items: center; //aligns items vertically in the grid area. Default is stretch.
-    // justify-items: center; //aligns items horizontall in the grid area.
+    //Using minmax function
+    //minmax makes the rows a minimum of 150px high or at a max the min-content
+    //grid-template-rows: repeat(2, minmax(150px, min-content)); 
+    //minmax makes the first column a minimum of 200px and a max of 50% of the grid
+    //grid-template-columns: minmax(200px, 50%) repeat(3, 1fr);
 
-    //Align grid tracks to grid container
-    grid-template-columns: repeat(2, 200px);
-    grid-template-rows: repeat(2, 100px);
-    justify-content: center; //aligns tracks horizonally (as in flexbox)
-    align-content: center; //aligns tracks vertically (as in flexbox)
+    //Using autofill and auto fit
+    grid-template-rows: repeat(2, minmax(150px, min-content));
+    //Autofill will create 100px columns to fill up the width of the grid
+    //grid-template-columns: repeat(auto-fill, 100px);
 
-  
+    //Autofit will create 100px columns and collapse any extra space that does not have content
+    //grid-template-columns: repeat(auto-fit, 100px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 150px;
+
+
 
     .junk {
         padding: 10px;
         color: white;
         font-size: 30px;
         background-color: orangered;
-        
 
-        &--4 {
-            background-color: crimson;
-            grid-row: 2 / span 3;
-            align-self: end; //overrides the stated align-items
-            justify-self: start; //overrides the stated justify-items
+        &--1 {
+           background-color: orangered; 
         }
 
-        &--6 {
-            background-color: lightcoral;
-            grid-row: 2 / span 2;
-            
-        }
+        &--2 {
+            background-color: yellowgreen; 
+         }
 
-        &--7 {
-            background-color: palevioletred;
-            grid-column: 1 / -1;
-        }
+         &--3 {
+            background-color: blueviolet; 
+         }
+
+         &--4 {
+            background-color: palevioletred; 
+         }
+
+         &--5 {
+            background-color: royalblue; 
+         }
+
+         &--6 {
+            background-color: goldenrod; 
+         }
+
+         &--7 {
+            background-color: darkslategray; 
+         }
+
+         &--8 {
+            background-color: orangered; 
+         }
+    
     }
 }
 
