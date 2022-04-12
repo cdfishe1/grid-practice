@@ -84,15 +84,17 @@
             // grid-area: 1/1/2/5;
             grid-column: 1 / -1;
         }
-        &--box1 {
+        
+        // &--box1 {
             
-        }
-        &--box2 {
+        // }
+        // &--box2 {
             
-        }
-        &--box3 {
+        // }
+        // &--box3 {
             
-        }
+        // }
+
         &--main {
             grid-area: 3/1/4/4;
         }
@@ -100,7 +102,8 @@
             grid-area: 2/4/4/5;
         }
         &--footer {
-            grid-area: 4/1/5/5;
+            // grid-area: 4/1/5/5;
+            grid-column: 1 / -1;
             
         }
     }
