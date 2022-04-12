@@ -1,7 +1,45 @@
-
-
 .header {
     &__title {
         color: green;
+    }
+}
+
+.container {
+    background-color: #eee;
+    width: 62.5rem;
+    margin: 1.875rem auto;
+
+    display: grid;
+    grid-template-rows: 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+}
+
+.item {
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+
+    &--1 {
+        background-color: orangered;
+    }
+
+    &--2 {
+        background-color: green;
+    }
+
+    &--3 {
+        background-color: violet;
+    }
+
+    &--4 {
+        background-color: palevioletred;
+    }
+
+    &--5 {
+        background-color: blue;
+    }
+
+    &--6 {
+        background-color: brown;
     }
 }
